@@ -218,8 +218,8 @@ def sixthTurnaround(pitches, speeds, startingPitch):
 
 def afterSomeHalfs(pitches, speeds, startingPitch):
     lastNoteLength = 0
-    for i in range(len(pitches)):
-        if speeds[i] == 2 and (pitches[i] - startingPitch in [0, 7, 12, 19]) and (lastNoteLength != (1/3)):
+    for i, pitch in enumerate(pitches):
+        if speeds[i] == 2 and (pitch - startingPitch in [0, 7, 12, 19]) and (lastNoteLength != (1/3)):
             x = randomTriples(startingPitch)
             newNotePitches, newNoteLengths = zip(*x)
             for a in range(len(newNotePitches)):
